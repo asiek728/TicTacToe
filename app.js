@@ -3,16 +3,18 @@ const { checkPos } = require('./checkPos');
 const { checkVictory } = require('./checkVictory');
 
 const printBoard = () => {
-  console.log("    [  1    2    3  ]")
-  console.log("x  " , row1);
-  console.log("y  " , row2);
-  console.log("z  " , row3);
+  console.log('\n');
+  console.log('    [  1    2    3  ]');
+  console.log('x  ', row1);
+  console.log('y  ', row2);
+  console.log('z  ', row3);
+  console.log('\n');
 };
 
 let player1 = true;
 let player2 = false;
 
-console.log('hello');
+console.log('Welcome to the Tic-Tac-Toe game! 👋');
 let hasPlayerWon = false;
 
 let row1 = ['-', '-', '-'];
@@ -20,7 +22,6 @@ let row2 = ['-', '-', '-'];
 let row3 = ['-', '-', '-'];
 
 printBoard();
-
 
 while (!hasPlayerWon) {
   if (player1) {
