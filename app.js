@@ -93,6 +93,7 @@ const startOneUserRound = () => {
       const output = checkPosComp(row1, row2, row3, validInputs[random], 'o');
 
       if (output === undefined) {
+        console.log("Computer move:");
         printBoard(row1, row2, row3);
         player1 = true;
         player2 = false;
