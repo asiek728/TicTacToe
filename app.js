@@ -8,6 +8,12 @@ let row1 = ['-', '-', '-'];
 let row2 = ['-', '-', '-'];
 let row3 = ['-', '-', '-'];
 
+const clearBoard = () => {
+  row1 = ['-', '-', '-'];
+  row2 = ['-', '-', '-'];
+  row3 = ['-', '-', '-'];
+}
+
 let hasPlayerWon = false;
 let player1 = true;
 let player2 = false;
@@ -16,42 +22,72 @@ console.log(c.yellow('Welcome to the Tic-Tac-Toe game! 👋'));
 
 printBoard(row1, row2, row3);
 
-while (!hasPlayerWon) {
-  if (player1) {
-    let input1 = prompt(
-      c.bgMagentaBright('Player 1') +
+const startRound = () => {
+
+  while (!hasPlayerWon) {
+    if (player1) {
+      let input1 = prompt(
+        c.bgMagentaBright('Player 1') +
         ' => please select the position you want to occupy (x1, x2, x3, y1, y2, y3, z1, z2, z3): '
-    );
+      );
 
-    const output = checkPos(row1, row2, row3, input1, 'x');
+      const output = checkPos(row1, row2, row3, input1, 'x');
 
-    if (output === undefined) {
-      printBoard(row1, row2, row3);
-      player2 = true;
-      player1 = false;
+      if (output === undefined) {
+        printBoard(row1, row2, row3);
+        player2 = true;
+        player1 = false;
 
-      if (checkVictory(row1, row2, row3, 'x') === true) {
-        break;
+        if (checkVictory(row1, row2, row3, 'x') === true) {
+          break;
+        }
       }
     }
-  }
 
-  if (player2) {
-    let input2 = prompt(
-      c.bgBlueBright('Player 2') +
+    if (player2) {
+      let input2 = prompt(
+        c.bgBlueBright('Player 2') +
         ' => please select the position you want to occupy (x1, x2, x3, y1, y2, y3, z1, z2, z3): '
-    );
+      );
 
-    const output = checkPos(row1, row2, row3, input2, 'o');
+      const output = checkPos(row1, row2, row3, input2, 'o');
 
-    if (output === undefined) {
-      printBoard(row1, row2, row3);
-      player1 = true;
-      player2 = false;
+      if (output === undefined) {
+        printBoard(row1, row2, row3);
+        player1 = true;
+        player2 = false;
 
-      if (checkVictory(row1, row2, row3, 'o') === true) {
-        break;
+        if (checkVictory(row1, row2, row3, 'o') === true) {
+          break;
+        }
       }
     }
   }
 }
+
+
+const startGame = () => {
+  startRound();
+  let input = 'y';
+  while (input.toLowerCase() !== 'n') {
+    input = prompt(
+      'Do you want to start a new game? (y or n) '
+    );
+
+    if (input.toLowerCase() === 'y') {
+      player1 = true;
+      player2 = false;
+      clearBoard();
+      printBoard(row1, row2, row3);
+      startRound();
+    }
+    else if (input.toLowerCase() === 'n') {
+      console.log('Thanks for playing! 👋')
+    }
+    else {
+      console.log('Please enter y or n')
+    }
+  }
+}
+
+startGame();
