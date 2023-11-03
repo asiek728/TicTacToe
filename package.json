@@ -5,12 +5,14 @@
   "main": "app.js",
   "scripts": {
     "dev": "node --watch app.js",
+    "tic-tac-toe": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ansi-colors": "^4.1.3",
     "prompt-sync": "^4.2.0"
   }
 }
