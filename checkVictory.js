@@ -1,3 +1,5 @@
+const c = require('ansi-colors');
+
 const checkVictory = (row1, row2, row3, player) => {
   if (
     (row1[0] === row1[1] && row1[0] === row1[2] && row1[0] === player) ||
@@ -10,10 +12,10 @@ const checkVictory = (row1, row2, row3, player) => {
     (row1[2] === row2[1] && row1[2] === row3[0] && row1[2] === player)
   ) {
     if (player === 'x') {
-      console.log('Player 1 has won the game!');
+      console.log(c.bgMagentaBright('Player 1') + ' has won the game! 🎉');
       return true;
     } else if (player === 'o') {
-      console.log('Player 2 has won the game!');
+      console.log(c.bgBlueBright('Player 2') + ' has won the game! 🎉');
       return true;
     }
   }
