@@ -3,7 +3,7 @@ const { checkPos } = require('./checkPos');
 const { checkVictory } = require('./checkVictory');
 
 const printBoard = () => {
-  console.log("    [  1    2    3  ]")
+  console.log("   [  1    2    3  ]")
   console.log("x  " , row1);
   console.log("y  " , row2);
   console.log("z  " , row3);
