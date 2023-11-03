@@ -8,11 +8,11 @@ let row1 = ['-', '-', '-'];
 let row2 = ['-', '-', '-'];
 let row3 = ['-', '-', '-'];
 
+let hasPlayerWon = false;
 let player1 = true;
 let player2 = false;
 
 console.log(c.yellow('Welcome to the Tic-Tac-Toe game! 👋'));
-let hasPlayerWon = false;
 
 printBoard(row1, row2, row3);
 
