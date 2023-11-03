@@ -10,7 +10,7 @@ A simple, terminal-based version of tic-tac-toe
    cd TicTacToe
    ```
 
-2. Install required `npm dependencies`
+2. Install required `npm` dependencies
 
    ```sh
    npm install
