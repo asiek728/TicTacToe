@@ -13,7 +13,7 @@ const clearBoard = () => {
   row1 = ['-', '-', '-'];
   row2 = ['-', '-', '-'];
   row3 = ['-', '-', '-'];
-}
+};
 
 let hasPlayerWon = false;
 let player1 = true;
@@ -28,7 +28,7 @@ const startTwoUsersRound = () => {
     if (player1) {
       let input1 = prompt(
         c.bgMagentaBright('Player 1') +
-        ' => please select the position you want to occupy (x1, x2, x3, y1, y2, y3, z1, z2, z3): '
+          ' => please select the position you want to occupy (x1, x2, x3, y1, y2, y3, z1, z2, z3): '
       );
 
       const output = checkPos(row1, row2, row3, input1, 'x');
@@ -47,7 +47,7 @@ const startTwoUsersRound = () => {
     if (player2) {
       let input2 = prompt(
         c.bgBlueBright('Player 2') +
-        ' => please select the position you want to occupy (x1, x2, x3, y1, y2, y3, z1, z2, z3): '
+          ' => please select the position you want to occupy (x1, x2, x3, y1, y2, y3, z1, z2, z3): '
       );
 
       const output = checkPos(row1, row2, row3, input2, 'o');
@@ -128,9 +128,7 @@ const startGameMode2 = () => {
   startTwoUsersRound();
   let input = 'y';
   while (input.toLowerCase() !== 'n') {
-    input = prompt(
-      'Do you want to start a new game? (y or n) '
-    );
+    input = prompt(c.yellow('\nDo you want to start a new game? (y or n) '));
 
     if (input.toLowerCase() === 'y') {
       player1 = true;
@@ -140,13 +138,13 @@ const startGameMode2 = () => {
       startTwoUsersRound();
     }
     else if (input.toLowerCase() === 'n') {
-      console.log('Thanks for playing! 👋')
+      console.log(c.greenBright('\nThanks for playing! 👋'));
     }
     else {
       console.log('Please enter y or n')
     }
   }
-}
+};
 
 
 
